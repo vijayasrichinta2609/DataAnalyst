@@ -3,173 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vijayasri Chinta - Backend Engineer</title>
+    <title>Vijayasri Chinta - Data Analyst</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --neon-pink: #ff007f;
+            --neon-teal: #00ffcc;
+            --bg-gray: #f9f9f9;
+            --card-white: #ffffff;
+            --text-dark: #333;
+            --text-light: #7f8c8d;
+        }
+
         body {
             font-family: 'Nunito', sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: var(--text-dark);
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9; /* Light background */
+            background-color: var(--bg-gray);
         }
+
         .container {
-            width: 80%;
+            width: 85%;
+            max-width: 1100px;
             margin: auto;
             overflow: hidden;
             padding: 20px;
         }
-        .footer-container {
-            background-color: black;
-            margin: auto;
-            overflow: hidden;
-            color: White;
-            font-size: 25px;
-            margin-bottom: -10px;
-        }
+
         header {
-            background: #ffffff;
-            padding: 20px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background: var(--card-white);
+            padding: 30px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        
+
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
-        
+
         .header-text h1 {
             margin: 0;
-            font-size: 2em;
-            color: #ff007f;
+            font-size: 2.5em;
+            color: var(--neon-pink);
         }
-        
+
         .header-text p {
             margin: 5px 0 0;
-            font-size: 1em;
-            color: #7f8c8d;
+            font-size: 1.1em;
+            color: var(--text-light);
+            font-weight: bold;
         }
-        
-        .tab-container ul {
+
+        nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
             display: flex;
         }
-        
-        .tab-container li {
+
+        nav li {
             margin-left: 20px;
         }
-        
-        .tab-container a {
-            text-decoration: none;
-            color: #ff007f;
-            font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        
-        .tab-container a:hover {
-            background-color: #ff007f;
-            color: #ffffff;
-        }
-        nav {
-            background: #ffffff; /* White nav for brightness */
-            color: #333;
-            padding: 10px 0;
-        }
-        nav ul {
-            padding: 0;
-            list-style: none;
-        }
-        nav li {
-            display: inline;
-            margin-right: 20px;
-        }
+
         nav a {
-            color: #ff007f; /* Neon pink */
             text-decoration: none;
-            font-size: 18px;
-            transition: color 0.3s; /* Smooth transition for hover effect */
+            color: var(--neon-pink);
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
         }
+
         nav a:hover {
-            color: #00ffcc; /* Neon teal on hover */
+            background-color: var(--neon-pink);
+            color: #fff;
+            box-shadow: 0 0 10px var(--neon-pink);
         }
+
         section {
-            margin-top: 20px;
-            background: #ffffff; /* White sections for brightness */
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Soft shadow */
+            margin-top: 30px;
+            background: var(--card-white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
+
         h2 {
-            color: #ff007f; /* Neon pink */
-        }
-        footer {
-            background: #ffffff; /* White footer for brightness */
-            color: #333;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: 20px;
-        }
-        .project, .certification {
-            margin-bottom: 20px;
-            padding: 15px;
-            background: #f2f2f2; /* Light gray for projects/certifications */
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Soft shadow */
-        }
-        .project h3, .certification h3 {
+            color: var(--neon-pink);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
             margin-top: 0;
         }
 
-        .tab-container {
-            display: flex; /* Use Flexbox for alignment */
-            justify-content: center; /* Center items horizontally */
-            align-items: center; /* Center items vertically */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
-        
-        .tab-container ul {
-            list-style: none; /* Remove default list styling */
-            padding: 0; /* Remove padding */
-            display: flex; /* Use Flexbox for the list */
+
+        .card {
+            background: #fdfdfd;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid var(--neon-pink);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
-        
-        .tab-container li {
-            margin: 0 15px; /* Space out the tabs */
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--text-dark);
         }
-        
-        .tab-container a {
-            text-decoration: none; /* Remove underline from links */
-            color: #ff007f; /* Set link color */
-            font-weight: bold; /* Make text bold */
-            padding: 10px 15px; /* Add padding for clickable area */
-            border-radius: 5px; /* Rounded corners */
-            transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+
+        .card span {
+            display: block;
+            font-size: 0.9em;
+            color: var(--neon-pink);
+            margin-bottom: 10px;
+            font-weight: bold;
         }
-        
-        .tab-container a:hover {
-            background-color: #ff007f; /* Change background on hover */
-            color: #ffffff; /* Change text color on hover */
+
+        .skills-tag {
+            display: inline-block;
+            background: #eee;
+            padding: 5px 12px;
+            margin: 5px 2px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            transition: background 0.3s;
+        }
+
+        .skills-tag:hover {
+            background: var(--neon-teal);
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: var(--neon-pink);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: transform 0.2s;
+        }
+
+        .contact-btn:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+
+        .footer-info p {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            .header-content { flex-direction: column; text-align: center; }
+            nav ul { margin-top: 20px; }
+            nav li { margin: 0 10px; }
         }
     </style>
 </head>
 <body>
+
     <header>
         <div class="container">
             <div class="header-content">
                 <div class="header-text">
                     <h1>Vijayasri Chinta</h1>
-                    <p>🌟 Backend Engineer | Innovator in AI & Web Development | AWS Cloud Expert 🌟</p>
+                    <p>Data Analyst | 3+ Years Experience</p>
                 </div>
-                <nav class="tab-container">
+                <nav>
                     <ul>
-                        <li><a href="#projects">GitHub Projects</a></li>
-                        <li><a href="#certifications">Certifications</a></li>
-                        <li><a href="https://www.linkedin.com/in/vijayasri-chinta" target="_blank">LinkedIn</a></li>
-                        <li><a href="mailto:chintavijayasri@outlook.com">Contact Me</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="mailto:chintavijayasri@outlook.com">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -177,117 +201,87 @@
     </header>
 
     <div class="container">
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Aspiring Backend Engineer, passionate about revolutionizing the tech landscape through innovative AI-driven solutions and cutting-edge web applications. Combining expertise in agentic AI, advanced search systems, Backend development, and cloud infrastructure to create intelligent, user-centric products.</p>
+        <section id="summary">
+            <h2>Professional Summary</h2>
+            <p>Data Analyst with 3+ years of experience in data analysis, statistical analysis, and data preparation. Proficient in SQL, Python, R, Tableau, and Power BI. Experienced across finance, healthcare, and retail sectors, specializing in identifying trends and anomalies through ML models and visual storytelling.</p>
         </section>
 
-        <section id="expertise">
-            <h2>Areas of Expertise</h2>
-            <ul>
-                <li>🚀 AI & Agentic Workflow Chatbots: Leveraging LangChain for sophisticated, autonomous task handling</li>
-                <li>💻 Dynamic Web Development: React.js for frontend, Flask API for robust backend solutions</li>
-                <li>🔍 RAG-Based Smart Search & Personalized Recommendations: Using MongoDB Atlas for enhanced context and accuracy</li>
-                <li>📊 Data Engineering: Experience with Snowflake and Databricks for large dataset processing</li>
-                <li>☁️ AWS Cloud Expertise: Proficient in AWS ecosystem, including ECR, EC2, EKS, and more</li>
-            </ul>
+        <section id="experience">
+            <h2>Work Experience</h2>
+            <div class="card" style="margin-bottom: 20px;">
+                <h3>Data Analyst Internship</h3>
+                <span>Deloitte | Aug 2025 — Dec 2025</span>
+                <ul>
+                    <li>Designed and optimized Power BI dashboards for KPI tracking to improve reporting performance.</li>
+                    <li>Developed SQL queries for large datasets to support cross-functional reporting needs.</li>
+                </ul>
+            </div>
+            <div class="card" style="margin-bottom: 20px;">
+                <h3>Data Analyst Internship</h3>
+                <span>USAA | Jan 2025 — May 2025</span>
+                <ul>
+                    <li>Analyzed complex datasets to support business decision-making and stakeholder reporting.</li>
+                    <li>Applied SQL and statistical analysis to validate data quality and surface insights.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Data Analyst (Full-time)</h3>
+                <span>Wipro | Jun 2020 — Dec 2022</span>
+                <ul>
+                    <li>Developed end-to-end ETL pipelines in Python and Snowflake (1M+ monthly records).</li>
+                    <li>Built Tableau and Power BI dashboards to track operational trends and customer insights.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Sarvatattva (Next.js)</h3>
+                    <p>A clean, modern mindfulness experience focusing on breathing, meditation, and sound therapy.</p>
+                    <div class="skills-tag">Next.js</div> <div class="skills-tag">Modern UX</div>
+                </div>
+                <div class="card">
+                    <h3>Habit Tracker</h3>
+                    <p>Web app built to maintain consistency with a simple, focused workflow. Deployed on Vercel.</p>
+                    <div class="skills-tag">UX Design</div> <div class="skills-tag">Vercel</div>
+                </div>
+            </div>
         </section>
 
         <section id="skills">
             <h2>Technical Skills</h2>
-            <ul>
-                <li>Languages: Python,C++, JavaScript, SQL</li>
-                <li>Frameworks/Tools: LangChain, MongoDB, Flask API, React.js, Snowflake, Databricks</li>
-                <li>Cloud: AWS (EC2, ECR, EKS, S3, Lambda, CloudFormation)</li>
-                <li>DevOps: Docker, Kubernetes, CI/CD pipelines</li>
-                <li>AI/ML: RAG, Vector Databases, Large Language Models</li>
-            </ul>
-        </section>
-
-        <!-- GitHub Projects Section -->
-        <section id="projects">
-            <h2>GitHub Projects</h2>
-            <div class="project">
-                <h3>Created a Stock Price Prediction project using Logistic Regression</h3>
-                <p>Developed a Stock Price Prediction project employing Supervised machine learning techniques( Logistic Regression), incorporating Pandas and NumPy for data manipulation, Scikit-learn for model implementation, and Matplotlib for visualization. Executed in Google Collab, the project demonstrated proficiency in leveraging diverse tools for comprehensive stock market analysis and prediction.</p>
-                <a href="https://github.com/vijayasrichinta2609/StockPricePrediction" target="_blank">View Project</a>
-            </div>
-            <div class="project">
-                <h3>Designed and implemented a Virtual Memory Manager for an Advanced Operating Systems project</h3>
-                <p>Developed a Virtual Memory Manager in C++ for an Advanced Operating Systems project, focusing on key concepts like Virtual Memory Management, TLB implementation, Page Table management, and Page Replacement Algorithm integration. The project monitors resource usage, including TLB hits and page faults, aiming to create an efficient and high-performance virtual memory manager reflective of modern operating system principles.</p>
-                <a href="https://github.com/vijayasrichinta2609/VirtualMemoryManager" target="_blank">View Project</a>
-            </div>
-            <div class="project">
-                <h3>Developed a PyTorch library tutorial project to enhance understanding and application of deep learning principles.</h3>
-                <p>Created a PyTorch tutorial project for deep learning understanding, highlighting PyTorch's popularity due to its dynamic graph, Python ease-of-use, extensive documentation, and growing pre-trained models. With a versatile framework supporting experimentation, research, and scalable applications, PyTorch's hybrid front-end, distributed training, and rich ecosystem prove invaluable in advancing deep learning despite some limitations.</p>
-                <a href="https://github.com/vijayasrichinta2609/PyTorchLib" target="_blank">View Project</a>
-            </div>
-            <div class="project">
-                <h3>Pattern recognition using Logistic Regression on COVID-19 cases</h3>
-                <p>Developed a COVID-19 prediction project integrating Pandas for data manipulation, Scikit-learn for machine learning models, and Matplotlib/Seaborn for visualization. Executed in Google Collab, the project employed diverse machine learning techniques, including regression, time series analysis, classification, and clustering, resulting in valuable insights and accurate predictions for COVID-19 cases.</p>
-                <a href="https://github.com/vijayasrichinta2609/COVIDCaseAnalysis" target="_blank">View Project</a>
-            </div>
-            <div class="project">
-                <h3>Spam URLs Detection</h3>
-                <p>Developed a machine learning system to detect spam URLs, enhancing cybersecurity through real-time classification and continuous monitoring. This project involved data collection, feature engineering, and applying models like Logistic Regression and Naïve Bayes, optimized for accuracy, precision, and recall. Integrated into a scalable system with user feedback to refine accuracy, demonstrating expertise in applied machine learning for security—a valuable asset for data-driven cybersecurity roles.</p>
-                <a href="https://github.com/vijayasrichinta2609/SpamURLDetection" target="_blank">View Project</a>
-            </div>
-            
-        </section>
-
-        <!-- Certifications Section -->
-        <section id="certifications">
-            <h2>Certifications</h2>
-            <div class="certification">
-                <h3>Intro to Deep Learning</h3>
-                <p>Kaggle</p>
-                <a href="https://www.kaggle.com/learn/certification/vchinta/intro-to-deep-learning" target="_blank">View Certificate</a>
-            </div>
-            <div class="certification">
-                <h3>Intro to Machine Learning</h3>
-                <p>Kaggle</p>
-                <a href="https://www.kaggle.com/learn/certification/vchinta/intro-to-machine-learning" target="_blank">View Certificate</a>
-            </div>
-            <div class="certification">
-                <h3>Pandas</h3>
-                <p>Kaggle</p>
-                <a href="https://www.kaggle.com/learn/certification/vchinta/pandas" target="_blank">View Certificate</a>
-            </div>
-            <div class="certification">
-                <h3>Supervised Machine Learning: Regression and Classification</h3>
-                <p>DeepLearning.AI</p>
-                <a href="https://www.coursera.org/account/accomplishments/verify/3YQQ7VT6KV6T" target="_blank">View Certificate</a>
-            </div>
-            <div class="certification">
-                <h3>Python (Basic) Certificate</h3>
-                <p>HackerRank</p>
-                <a href="https://www.hackerrank.com/certificates/5D88A139EF70" target="_blank">View Certificate</a>
-            </div>
-            <div class="certification">
-                <h3>Software Engineer Intern Certificate</h3>
-                <p>HackerRank</p>
-                <a href="https://www.hackerrank.com/certificates/4369E0F8033B" target="_blank">View Certificate</a>
-            </div>
-            <div class="certification">
-                <h3>Professional Program in Artificial Intelligence</h3>
-                <p>IIT Hyderabad Alumni Association</p>
-                <a href="#" target="_blank">View Certificate</a>
-            </div>
-            <div class="certification">
-                <h3>SQL (Basic) Certificate</h3>
-                <p>HackerRank</p>
-                <a href="https://www.hackerrank.com/certificates/821C8A2C7304" target="_blank">View Certificate</a>
+            <p><strong>Languages:</strong> SQL, Python, R, MATLAB, Bash</p>
+            <p><strong>Tools:</strong> Tableau, Power BI, Excel, Matplotlib, Seaborn</p>
+            <p><strong>Data:</strong> Snowflake, ETL Pipelines, SSIS, PySpark, MySQL, Hadoop</p>
+            <div style="margin-top: 15px;">
+                <span class="skills-tag">Agile</span>
+                <span class="skills-tag">Data Wrangling</span>
+                <span class="skills-tag">Predictive Analytics</span>
+                <span class="skills-tag">Visual Storytelling</span>
             </div>
         </section>
 
+        <section id="education">
+            <h2>Education</h2>
+            <p><strong>Master of Science in Computer Science</strong><br>North Carolina A&T State University</p>
+            <p><strong>Bachelor of Science in Electronics and Communication Engineering</strong><br>Andhra University, India</p>
+        </section>
+
+        <section id="contact" style="text-align: center;">
+            <h2>Let's Connect</h2>
+            <p>I'm always open to discussing data projects or opportunities.</p>
+            <a href="mailto:chintavijayasri@outlook.com" class="contact-btn">Email Me</a>
+            <p style="margin-top: 15px;">📞 +1 (984) 528-0482</p>
+        </section>
     </div>
 
     <footer>
-        <div class="footer-container">
-           <!-- Updated contact info -->
-           <p> Lets Connect! </p> 
-           <p>🔗 My Email: chintavijayasri@outlook.com </p> 
-       </div>
+        <div class="footer-info">
+            <p>© 2026 Vijayasri Chinta | Built with Passion</p>
+            <p>USA | chintavijayasri@outlook.com</p>
+        </div>
     </footer>
 
 </body>
